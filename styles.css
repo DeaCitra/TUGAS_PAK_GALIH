@@ -1,0 +1,368 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+:root {
+    --primary-color: #a855f7;
+    --primary-color-dark: #9333ea;
+    --secondary-color: white;
+    --text-dark: #1f2937;
+    --text-light: #6b7280;
+    --extra-light: white;
+    --max-width: 1200;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    background-color: pink;
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+.contact-menu a {
+    background-color: #B802F8;
+    padding: 10px 15px;
+    border-radius: 5px;
+    color: white;
+}
+
+.contact-menu a:hover {
+    background-color: #9333EA;
+}
+
+nav {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #ffffff;
+    z-index: 99;
+}
+
+.nav__content {
+    max-width: var(--max-width);
+    margin: auto;
+    padding: 1.5rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: pink;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    width: 55px; 
+    height: auto; 
+    margin-right: 10px; 
+}
+
+nav .logo a {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    transition: .3s;
+}
+
+nav .logo a:hover {
+    color: var(--primary-color-dark);
+}
+
+nav .checkbox {
+    display: none;
+}
+
+nav input {
+    display: none;
+}
+
+nav .checkbox i {
+    font-size: 2rem;
+    color: var(--primary-color);
+    cursor: pointer;
+}
+
+ul {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    list-style: none;
+    transition: left 0.3s;
+}
+
+ul li a {
+    padding: 0.5rem 1rem;
+    border: 2px solid transparent;
+    text-decoration: none;
+    font-weight: 600;
+    color: var(--text-dark);
+    transition: 0.3s;
+}
+
+ul li a:hover {
+    border-top-color: var(--secondary-color);
+    border-bottom-color: var(--secondary-color);
+    color: var(--secondary-color);
+}
+
+.section {
+    background-color: var(--extra-light);
+}
+
+.section__containe {
+    min-height: 100vh;
+    max-width: var(--max-width);
+    margin: auto;
+    padding: 1rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 4rem;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;  
+}
+
+.subtitle {
+    letter-spacing: 2px;
+    color: var(--text-light);
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.title {
+    font-size: 2.5rem;
+    font-weight: 400;
+    line-height: 3rem;
+    color: var(--text-dark);
+    margin-bottom: 1rem;
+    text-align: left; 
+}
+
+.title span {
+    font-weight: 600;
+}
+
+.description {
+    line-height: 1.5rem;
+    color: var(--text-light);
+    margin-bottom: 2rem;    
+}
+
+.action__btns {
+    display: flex;
+    gap: 1rem;
+}
+
+.action__btns button {
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    padding: 1rem 2rem;
+    outline: none;
+    border: 2px solid var(--primary-color);
+    border-radius: 10px;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+nav ul li.contact a {
+    background-color: var(--primary-color);
+    color: #ffffff;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+}
+
+nav ul li.contact a:hover {
+    background-color: var(--primary-color-dark);
+}
+
+.action__btns {
+    display: none; 
+}
+
+.image {
+    display: grid;
+    place-items: center;
+}
+
+.image img {
+    width: min(25rem, 90%);
+    border-radius: 100%;
+}
+
+@media (max-width: 750px) {
+    nav .checkbox {
+        display: block;
+    }
+
+    ul {
+        position: absolute;
+        width: 100%;
+        height: calc(100vh - 85px);
+        left: -100%;
+        top: 85px;
+        background-color: var(--extra-light);
+        flex-direction: column;
+        justify-content: center;
+        gap: 3rem;
+    }
+
+    nav #check:checked ~ ul {
+        left: 0;
+    }
+
+    ul li a {
+        font-size: 1.25rem;
+    }
+
+    .section__containe {
+        padding: 10rem 1rem 5rem 1rem;
+        text-align: center;
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .action__btns {
+        margin: auto;
+    }
+
+    .about-slide
+    .profile-slide {
+        display: none; 
+    }
+
+    nav ul li:nth-child(1) a,
+    nav ul li:first-child a {
+        cursor: pointer;
+    }
+
+    nav ul li:nth-child(1) a:hover,
+    nav ul li:nth-child(1) a:focus,
+    nav ul li:nth-child(1) a:active,
+    nav ul li:first-child a:hover,
+    nav ul li:first-child a:focus,
+    nav ul li:first-child a:active {
+        background-color: var(--primary-color);
+        color: #ffffff;
+    }
+
+    nav ul li:nth-child(1) a:focus,
+    nav ul li:first-child a:focus {
+        outline: none;
+    }
+
+    nav ul li:nth-child(1) a.active,
+    nav ul li:first-child a.active {
+        background-color: var(--primary-color-dark);
+    }
+
+    nav ul li:nth-child(1) a.active ~ .about-slide,
+    nav ul li:first-child a.active ~ .about-slide {
+        display: block;
+    }
+    
+
+    .profile-slide {
+        display: none; 
+    }
+
+    nav ul li:nth-child(2) a {
+        cursor: pointer;
+    }
+
+    nav ul li:nth-child(2) a:hover,
+    nav ul li:nth-child(2) a:focus,
+    nav ul li:nth-child(2) a:active {
+        background-color: var(--primary-color);
+        color: #ffffff;
+    }
+
+    nav ul li:nth-child(2) a:focus {
+        outline: none; 
+    }
+
+    nav ul li:nth-child(2) a.active {
+        background-color: var(--primary-color-dark);
+    }
+
+    nav ul li:nth-child(2) a.active ~ .profile-slide {
+        display: block;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 4rem;
+        align-items: center;
+    }
+}
+
+.contact-slide {
+    background-color: pink; /* Ubah warna background menjadi pink */
+    padding: 0px ;
+    text-align: center;
+}
+
+.contact-slide .section__containe {
+    display: flex;
+    flex-direction: column; /* Ubah arah kolom */
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    gap: 20px;
+}
+
+.contact-slide .title {
+    font-size: 3rem; /* Tinggikan ukuran font */
+    margin-bottom: -150px; /* Beri jarak yang lebih besar ke bawah */
+    color: white; /* Ubah warna teks menjadi putih */
+}
+
+.contact-slide .contact-details {
+    display: flex;
+    flex-direction: top; /* Ubah arah kolom */
+    justify-content: center;
+    align-items: center;
+}
+
+.contact-slide .contact-icons {
+    display: flex;
+    gap: 200px;
+    justify-content: center; /* Pusatkan ikon */
+    position: right;
+}
+
+.contact-slide .contact-icons a {
+    display: flex;
+    flex-direction: column; /* Ubah arah kolom */
+    align-items: center;
+    color: white; /* Ubah warna teks menjadi putih */
+    text-decoration: none;
+}
+
+.contact-slide .contact-icons img {
+    width: 50px; /* Perbesar ukuran ikon */
+    height: auto;
+}
+.content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 110vh; /* Atur tinggi sesuai kebutuhan Anda */
+}
+
+.title {
+    text-align: center;
+}
+
+
+
+
+
